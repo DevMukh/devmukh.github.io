@@ -1,19 +1,16 @@
-import 'package:firebasecodepractice/Login.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/about.dart';
+import 'package:portfolio/home.dart';
+import 'package:portfolio/myproject.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Firebase Login Code',
-      home: LoginPage(),
-    );
-  }
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    initialRoute: 'home',
+    routes: {
+      'about': (context) => MyAbout(),
+      'home': (context) => MyHome(),
+      'myproject': (context) => MyProject(),
+    },
+  ));
 }
